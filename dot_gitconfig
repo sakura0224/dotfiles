@@ -1,46 +1,46 @@
 [user]
-	name = sakura0224
-	email = shiinayane@gmail.com
+    name = sakura0224
+    email = shiinayane@gmail.com
 
 [init]
-  defaultBranch = main
+    defaultBranch = main
 
 [pull]
-  rebase = true
+    rebase = true
 
 [push]
-  default = simple
-  autoSetupRemote = true
+    default = simple
+    autoSetupRemote = true
 
 [core]
-  editor = nvim
-  autocrlf = input
-  pager = less -FRX
-  excludesfile = ~/.gitignore_global
+    editor = nvim
+    autocrlf = input
+    pager = less -FRX
+    excludesfile = ~/.gitignore_global
 
 [color]
-  ui = auto
+    ui = auto
 
 [fetch]
-  prune = true
+    prune = true
 
 [rerere]
-  enabled = true
+    enabled = true
 
 [alias]
-  st = status
-  co = checkout
-  br = branch
-  cm = commit
-  amend = commit --amend --no-edit
-  lg = log --oneline --graph --decorate --all
-  last = log -1 HEAD
+    st = status
+    co = checkout
+    br = branch
+    cm = commit
+    amend = commit --amend --no-edit
+    lg = log --oneline --graph --decorate --all
+    last = log -1 HEAD
 
 [merge]
-  tool = nvimdiff
+    tool = nvimdiff
 
 [diff]
-  tool = nvimdiff
+    tool = nvimdiff
 
 [credential]
-  helper = osxkeychain
+    helper = osxkeychain
