@@ -1,0 +1,15 @@
+# === 00: Instant prompt (keep at top if using p10k) ===
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# === helper: safe source ===
+_zsource() { [[ -r "$1" ]] && source "$1"; }
+
+# === load modules ===
+_zsource "$HOME/.config/zsh/00-env.zsh"
+_zsource "$HOME/.config/zsh/10-completion.zsh"
+_zsource "$HOME/.config/zsh/20-aliases.zsh"
+_zsource "$HOME/.config/zsh/30-plugins.zsh"
+_zsource "$HOME/.config/zsh/40-lang.zsh"
+_zsource "$HOME/.config/zsh/90-local.zsh"
