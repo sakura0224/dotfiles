@@ -1,0 +1,46 @@
+# Added by OrbStack: 'orb' SSH host for Linux machines
+# This only works if it's at the top of ssh_config (before any Host blocks).
+# This won't be added again if you remove it.
+Include ~/.orbstack/ssh/config
+
+Host    material-login
+        HostName        157.82.195.181
+        User            ykwang224
+
+Host    h100
+        HostName        157.82.195.190
+        User            ykwang224
+        IdentityFile    ~/.ssh/id_ed25519
+        ProxyCommand    ssh material-login -W %h:%p
+
+Host 	github.com
+  	HostName 	github.com
+  	User 		git
+  	IdentityFile 	~/.ssh/id_ed25519_github
+  	IdentitiesOnly 	yes
+
+Host	aws
+	HostName	18.181.14.174
+	User		ubuntu
+	Port		22
+	IdentityFile	~/.ssh/aws.pem
+
+Host    nuc
+        # Tailscale でアクセスする場合はsuzulab-nuc302.tail3ab8d5.ts.net
+        # あるいは192.168.8.241
+        HostName        suzulab-nuc302.tail3ab8d5.ts.net
+        User            ykwang224
+        LocalForward    18333 192.168.8.204:18333
+
+Host    dgx-spark
+        HostName        192.168.8.238
+        User            ykwang224
+        IdentityFile    ~/.ssh/id_ed25519
+        ProxyCommand    ssh -W %h:%p nuc
+
+Host    dgx-spark-vnc
+        HostName        192.168.8.238
+        User            ykwang224
+        IdentityFile    ~/.ssh/id_ed25519
+        ProxyCommand    ssh -W %h:%p nuc
+        LocalForward    5904 localhost:5904
