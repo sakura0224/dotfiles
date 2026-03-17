@@ -3,3 +3,7 @@
 
 # Java
 [[ -d /opt/homebrew/opt/openjdk@21/bin ]] && export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+
+# Editor
+export EDITOR=nvim
+export VISUAL=nvim
