@@ -4,7 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Ctrl + mouse side buttons switch desktop",
+                        "description": "Mouse side buttons: click for back/forward, Ctrl+click for desktop switch",
                         "manipulators": [
                             {
                                 "from": {
@@ -34,6 +34,32 @@
                                     {
                                         "key_code": "right_arrow",
                                         "modifiers": ["control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "modifiers": { "optional": ["any"] },
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "modifiers": { "optional": ["any"] },
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
