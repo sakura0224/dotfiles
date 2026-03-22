@@ -4,6 +4,43 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Ctrl + mouse side buttons switch desktop",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    },
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": ["control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    },
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": ["control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Change right_control to ~",
                         "manipulators": [
                             {
@@ -22,25 +59,6 @@
                         ]
                     },
                     {
-                        "description": "Change right_command to `",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_command",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": []
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Caps Lock: tap = English, hold = Control",
                         "enabled": false,
                         "manipulators": [
@@ -51,41 +69,6 @@
                                 },
                                 "to_if_alone": [{ "select_input_source": { "language": "en" } }],
                                 "to_if_held_down": [{ "key_code": "left_control" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Right command: tap = Chinese, hold = command",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_command",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "spacebar",
-                                        "modifiers": ["left_control", "left_option"]
-                                    }
-                                ],
-                                "to_if_held_down": [{ "key_code": "right_command" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Right control -> Ctrl+Option+Space",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_control",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to_if_alone": [{ "select_input_source": { "language": "jp" } }],
-                                "to_if_held_down": [{ "key_code": "right_control" }],
                                 "type": "basic"
                             }
                         ]
@@ -109,6 +92,15 @@
                     },
                     "ignore_vendor_events": true,
                     "treat_as_built_in_keyboard": true
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 9003,
+                        "vendor_id": 6421
+                    },
+                    "ignore": false,
+                    "ignore_vendor_events": true
                 }
             ],
             "name": "Default profile",

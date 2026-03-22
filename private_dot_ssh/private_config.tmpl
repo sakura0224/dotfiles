@@ -11,7 +11,7 @@ Host    h100
         HostName        157.82.195.190
         User            ykwang224
         IdentityFile    ~/.ssh/id_ed25519
-        ProxyCommand    ssh material-login -W %h:%p
+        ProxyJump       material-login
 
 Host    github.com
         HostName        github.com
@@ -39,6 +39,11 @@ Host    dgx-spark
         HostName        192.168.8.238
         User            ykwang224
         IdentityFile    ~/.ssh/id_ed25519
-        ProxyCommand    ssh -W %h:%p nuc
-        LocalForward    5904 localhost:5904
+        ProxyJump       nuc
 
+Host    dgx-spark-vnc
+        HostName        192.168.8.238
+        User            ykwang224
+        IdentityFile    ~/.ssh/id_ed25519
+        ProxyJump       nuc
+        LocalForward    5904 localhost:5904
